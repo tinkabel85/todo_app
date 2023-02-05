@@ -1,0 +1,24 @@
+.todo__item {
+	display: flex;
+	flex-direction: row;
+	text-align: start;
+	margin-bottom: 5px;
+}
+.todo__item li {
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+	gap: 0.2em;
+	flex: 2;
+	padding: 3px;
+}
+
+.todo__item--title {
+	width: 50%;
+}
+.todo__item--date {
+	width: 20%;
+}
+.todo__item--priority {
+	width: 22%;
+}
