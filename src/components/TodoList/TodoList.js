@@ -2,7 +2,8 @@ import "./TodoList.css";
 import TodoItem from "../TodoItem/TodoItem";
 
 function TodoList(props) {
-    const { todos, setTodos } = props;
+    const todos = props.todos;
+    const setTodos = props.setTodos;
 	return (
 		<ul className="Todo__list">
 			{todos.map((todo, i) => (

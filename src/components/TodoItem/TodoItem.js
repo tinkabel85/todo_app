@@ -6,19 +6,16 @@ function TodoItem(props) {
 	const { deleteItem, todo } = props;
 
     function mapPriority(value) {
-        let valueText;
+        
 		switch (value) {
-			case "1":
-				valueText = "High";
-				break;
-			case "2":
-				valueText = "Medium";
-				break;
-			case "3":
-				valueText = "Low";
-				break;
+			case 1:
+				return "High";
+            case 2:
+                return "Medium";
+			case 3:
+				return "Low";
         }
-        return valueText;
+        return '';
 	}
 	return (
 		<div className="todo__item">

@@ -18,9 +18,10 @@ function App() {
 					todos[i] = temp;
 				}
 			}
-    }
-    setTodos([...todos]);
+		}
+		//setTodos([...todos]);
 		console.log(todos);
+		return todos;
 	};
 
 	return (
@@ -31,7 +32,10 @@ function App() {
 				</header>
 				<TodoForm addTodo={(todo) => setTodos([...todos, todo])} />
 				<TodoList todos={todos} setTodos={setTodos} />
-				<button onClick={() => sortByPriority(todos)} className="Button--sort">
+				<button
+					onClick={() => setTodos(sortByPriority([...todos]))}
+					className="Button--sort"
+				>
 					Sort Tasks
 				</button>
 			</div>

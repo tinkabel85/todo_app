@@ -4,7 +4,7 @@ import "./TodoForm.css";
 function TodoForm(props) {
 	const [inputText, setInputText] = useState("");
 	const [dueDate, setDueDate] = useState("");
-	const [priority, setPriority] = useState("3");
+	const [priority, setPriority] = useState(3);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -16,7 +16,7 @@ function TodoForm(props) {
 
 		setInputText("");
 		setDueDate("");
-		setPriority("3");
+		setPriority("");
 	};
 
 	return (
@@ -39,7 +39,7 @@ function TodoForm(props) {
 				name=""
 				defaultValue={'3'}
 				className="priority"
-				onInput={(e) => setPriority(e.target.value)}
+				onInput={(e) => setPriority(parseInt(e.target.value))}
 			>
 				<option value="1">High</option>
 				<option value="2">Medium</option>
