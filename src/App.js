@@ -1,10 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TodoForm from "./components/TodoForm/TodoForm";
 import TodoList from "./components/TodoList/TodoList";
 import "./App.css";
 
 function App() {
 	const [todos, setTodos] = useState([]);
+
+	useEffect(() => {
+		const todosArr = JSON.parse(localStorage.getItem("todos"));
+		if (!todos) {
+			return [];
+		}
+		if (todosArr.length) {
+			setTodos(todosArr);
+		}
+	}, []);
+
+	useEffect(() => {
+		localStorage.setItem("todos", JSON.stringify(todos));
+	}, [todos]);
+
+
 
 	const sortByPriority = (todos) => {
 		let done = false;
